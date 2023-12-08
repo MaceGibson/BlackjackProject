@@ -6,6 +6,16 @@ public class Dealer extends Player {
 	
 	public Dealer() {
 		deck = new Deck();
+		shuffleDeck();
 		setHand(new BlackjackHand());
+	}
+	
+	public void dealInitialCards(Player player) {
+		player.getHand().addCard(deck.dealCard());
+		player.getHand().addCard(deck.dealCard());
+	}
+	
+	private void shuffleDeck() {
+		deck.shuffle();
 	}
 }
