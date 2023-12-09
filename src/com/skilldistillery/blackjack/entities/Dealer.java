@@ -1,30 +1,31 @@
 package com.skilldistillery.blackjack.entities;
 
-public class Dealer extends Player {
+public class Dealer extends Hand {
 
 	private Deck deck;
 
 	public Dealer() {
 		deck = new Deck();
 		shuffleDeck();
-		setHand(new BlackjackHand());
 	}
 
 	public void dealInitialCards(Player player) {
-		player.getHand().addCard(deck.dealCard());
-		player.getHand().addCard(deck.dealCard());
+		player.addCard(deck.dealCard());
+		addCard(deck.dealCard());
+		player.addCard(deck.dealCard());
+		addCard(deck.dealCard());
 	}
 
 	private void shuffleDeck() {
 		deck.shuffle();
 	}
 
-	public void playRound() {
-		while (getHand().getHandValue() < 17) {
-			getHand().addCard(deck.dealCard());
+	public void playRound(Player player) {
+		while (getHandValue() < 17) {
+			addCard(deck.dealCard());
 		}
-		System.out.println("Dealer's hand: " + getHand().getCards());
-		System.out.println("Dealer's hand value: " + getHand().getHandValue());
+		System.out.println("Dealer's hand: " + getHandAsString());
+		System.out.println("Dealer's hand value: " + getHandValue());
 	}
 
 	public Deck getDeck() {

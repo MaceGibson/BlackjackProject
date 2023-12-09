@@ -21,6 +21,14 @@ public abstract class Hand {
 	public List<Card> getCards() {
 		return cards;
 	}
+	
+	public String getHandAsString() {
+		StringBuilder handString = new StringBuilder();
+		for (Card card : cards) {
+			handString.append(card).append(", ");
+		}
+		return handString.toString().trim();
+	}
 
 	public int getHandValue() {
 		int value = 0;
@@ -28,6 +36,10 @@ public abstract class Hand {
 			value += card.getValue();
 		}
 		return value;
+	}
+	
+	public boolean isBusted() {
+		return getHandValue() > 21;
 	}
 
 }
