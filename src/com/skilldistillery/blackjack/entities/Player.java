@@ -2,7 +2,7 @@ package com.skilldistillery.blackjack.entities;
 
 import java.util.Scanner;
 
-public class Player extends Hand {
+public class Player extends BlackjackHand {
 
 	public Player() {
 	}

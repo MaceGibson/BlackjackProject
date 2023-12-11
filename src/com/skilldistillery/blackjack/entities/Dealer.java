@@ -1,6 +1,6 @@
 package com.skilldistillery.blackjack.entities;
 
-public class Dealer extends Hand {
+public class Dealer extends BlackjackHand {
 
 	private Deck deck;
 

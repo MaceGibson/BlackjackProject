@@ -69,5 +69,4 @@ public class BlackjackApp {
 			System.out.println("It's a tie!");
 		}
 	}
-
 }
